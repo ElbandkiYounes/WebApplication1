@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="light-theme">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Angular Learning</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="/" class="header-title">
+            <svg class="angular-logo" viewBox="0 0 186.2 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#DD0031" d="M93.1 0L0 33.2l14.2 123.1L93.1 200l78.9-43.7 14.2-123.1L93.1 0z"/>
+                <path fill="#C3002F" d="M93.1 0v22.2-.1V200l78.9-43.7 14.2-123.1L93.1 0z"/>
+                <path fill="#FFFFFF" d="M93.1 22.1L36.9 152.6h20.8l11.2-28h48.4l11.2 28h20.8L93.1 22.1zm17 82.3H76.1l17-40.9 17 40.9z"/>
+            </svg>
+            <span>Angular Course</span>
+        </a>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <span class="material-icons">dark_mode</span>
+        </button>
+        <div style="flex: 1;"></div>  <!-- This creates space after the toggle -->
+    </header>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <nav class="side-nav">
+                <div class="nav-group-title">Course Navigation</div>
+                <ul>
+                    <li>
+                        <a href="/index">
+                            <span class="material-icons">start</span>
+                            Introduction
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Chapter/1">
+                            <span class="material-icons">code</span>
+                            Angular Core
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Chapter/2">
+                            <span class="material-icons">precision_manufacturing</span>
+                            Advanced Angular
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Chapter/3">
+                            <span class="material-icons">summarize</span>
+                            Summary
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Quiz" class="quiz-link">
+                            <span class="material-icons">quiz</span>
+                            Take Quiz
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('.material-icons');
+
+        // Check for saved theme preference
+        if (localStorage.getItem('theme') === 'dark') {
+            html.classList.add('dark-theme');
+            icon.textContent = 'light_mode';
+        }
+
+        themeToggle.addEventListener('click', function() {
+            html.classList.toggle('dark-theme');
+            icon.textContent = html.classList.contains('dark-theme') ? 'light_mode' : 'dark_mode';
+            
+            // Save theme preference
+            localStorage.setItem('theme', html.classList.contains('dark-theme') ? 'dark' : 'light');
+        });
+    </script>
+</body>
+</html>

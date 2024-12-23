@@ -1,0 +1,32 @@
+﻿@page
+@model WebApplication1.Pages.CertificateModel
+@{
+    ViewData["Title"] = "Certificate";
+}
+
+<div class="certificate-container">
+    @if (Model.Score >= 4) 
+    {
+        <div class="success-content">
+            <h2>Congratulations!</h2>
+            <p>@Model.FirstName @Model.LastName, you have successfully completed the course!</p>
+            
+            <form method="post" asp-page-handler="Download">
+                <button type="submit" class="btn btn-primary">
+                    <span class="material-icons">download</span>
+                    Download Certificate
+                </button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <div class="retry-content">
+            <h2>Almost There!</h2>
+            <p>Keep learning and try the quiz again when you're ready.</p>
+            <a href="/Chapter/1" class="btn btn-primary">Review Course</a>
+            <a href="/Quiz" class="btn btn-secondary">Retry Quiz</a>
+        </div>
+    }
+</div>
+

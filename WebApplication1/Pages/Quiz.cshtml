@@ -1,0 +1,119 @@
+﻿@page
+@model WebApplication1.Pages.QuizModel
+@{
+    ViewData["Title"] = "Final Quiz";
+}
+
+<div class="quiz-container">
+    <div class="quiz-header">
+        <h2>Final Assessment</h2>
+        <p>Complete this quiz to earn your certificate</p>
+        <div class="quiz-progress">
+            <div class="progress-bar" style="width: 0%"></div>
+        </div>
+    </div>
+
+    <form method="post">
+        <div class="quiz-form">
+            <div class="name-inputs">
+                <div class="form-group">
+                    <label for="FirstName">First Name</label>
+                    <input type="text" id="FirstName" name="FirstName" required />
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Last Name</label>
+                    <input type="text" id="LastName" name="LastName" required />
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>1. What is Angular Routing used for?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q1" value="1" required />
+                        <span class="option-text">Navigation between different views in a single-page application</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q1" value="0" />
+                        <span class="option-text">Styling components in Angular applications</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>2. What is the purpose of Components in Angular?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q2" value="0" required />
+                        <span class="option-text">To handle HTTP requests only</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q2" value="1" />
+                        <span class="option-text">To create reusable UI elements with their own logic and data</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>3. What are Directives in Angular?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q3" value="1" required />
+                        <span class="option-text">Classes that add additional behavior to elements in Angular applications</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q3" value="0" />
+                        <span class="option-text">Functions that handle form validation only</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>4. What is RxJS used for in Angular?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q4" value="1" required />
+                        <span class="option-text">Handling asynchronous data streams and reactive programming</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q4" value="0" />
+                        <span class="option-text">Creating user interfaces only</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>5. What are Services in Angular?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q5" value="1" required />
+                        <span class="option-text">Classes that handle data and logic shared across components</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q5" value="0" />
+                        <span class="option-text">Components that display data to users</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-group">
+                <h3>6. What is Data Binding in Angular?</h3>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="Q6" value="1" required />
+                        <span class="option-text">Synchronization of data between the model and view</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="Q6" value="0" />
+                        <span class="option-text">Storing data in the browser's local storage</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-quiz">
+                <span class="material-icons">check_circle</span>
+                Submit Quiz
+            </button>
+        </div>
+    </form>
+</div>
